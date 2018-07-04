@@ -51,7 +51,10 @@ int read_next(FILE *input_seq) {
  * current output_run.
  */
 FILE* start_next_output_run(FILE* output_run) {
-    fclose(output_run);
+    if (output_run)
+    {
+        fclose(output_run);
+    }
     char new_filename[16];
     static int run_count = 0;
 
